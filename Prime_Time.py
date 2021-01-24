@@ -1,4 +1,6 @@
 import time
+# I have no idea how to explain what exactly is happening here
+# I myself made this program after brainstorming a lot
 print("""This is a program to find the number of prime numbers
 between any numbers you want.
 """)
@@ -31,9 +33,7 @@ while True:
             print("None")
     except ValueError:
         print("Enter a number only.")
-print("THANK YOU")
-time.sleep(1)
-print("Made by AbhiK02")
+print('\n' + "Thank You!")
 time.sleep(2)
                     
                         
