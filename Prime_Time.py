@@ -4,8 +4,22 @@ import time
 print("""This is a program to find the number of prime numbers
 between any numbers you want.
 """)
+
 print("Enter '0' as both limits to exit the program.")
 print("")
+
+def is_prime(n):
+    if n % 2 == 0 and n != 2:
+        return False
+
+    #Yo could improve this function replacing n with sqrt(n)
+    for i in range(3, n):
+        if n % i == 0:
+            return False
+    return True
+
+# def count_primes_b2n(low_limit, max_limit):
+
 while True:
     try:
         print("")
