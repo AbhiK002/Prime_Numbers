@@ -18,7 +18,19 @@ def is_prime(n):
             return False
     return True
 
-# def count_primes_b2n(low_limit, max_limit):
+def count_primes_b2n(low_limit, max_limit):
+    count = 0
+    for i in range(low_limit + 1, max_limit):
+        if is_prime(i):
+            count += 1
+            print(i, end=", ")
+
+    if count == 0:
+        print("None")
+        print()
+    else:
+        print()
+        print("Count:", count)
 
 while True:
     try:
