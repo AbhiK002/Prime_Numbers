@@ -1,3 +1,8 @@
+import timeit
+import math
+a = timeit.default_timer()
+
+
 def info():
     print("""This is a program to find the number of prime numbers
     between any numbers you want.
@@ -41,7 +46,7 @@ def print_primes(l, u):
     if l % 2 == 0:
         for num in range(l+1, u+1, 2):
             prime = True
-            for i in range(2, int(num/2)):
+            for i in range(3, int(math.sqrt(num)), 2):
                 if num % i == 0:
                     prime = False
                     break
@@ -50,17 +55,24 @@ def print_primes(l, u):
     else:
         for num in range(l, u+1, 2):
             prime = True
-            for i in range(2, int(num/2)):
+            for i in range(3, int(math.sqrt(num)), 2):
                 if num % i == 0:
                     prime = False
                     break
             if prime:
                 prime_list.append(str(num))
-    
-    output = ', '.join(prime_list)
-    return output
-    
+
+    if prime_list:
+        output = ', '.join(prime_list)
+        return output
+    else:
+        return "None"
+
+
+info()
 low, upp = get_limits()
 print(f"Prime numbers between {low} and {upp}:\n" + print_primes(low, upp))
-
+exectime = str((timeit.default_timer()-a)*1000)[:8]
+print(f"\nlimits: {low} and {upp}")
+print(f"exec time: {exectime} ms")
     
