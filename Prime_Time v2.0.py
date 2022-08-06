@@ -1,6 +1,4 @@
-import timeit
 import math
-a = timeit.default_timer()
 
 
 def info():
@@ -72,7 +70,3 @@ def print_primes(l, u):
 info()
 low, upp = get_limits()
 print(f"Prime numbers between {low} and {upp}:\n" + print_primes(low, upp))
-exectime = str((timeit.default_timer()-a)*1000)[:8]
-#print(f"\nlimits: {low} and {upp}")
-#print(f"exec time: {exectime} ms")
-    
